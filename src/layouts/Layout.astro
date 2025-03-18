@@ -1,22 +1,40 @@
-<!doctype html>
+const WeShelter = Astro.props;
+
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>WeShelter</title>
+    <link rel="stylesheet" href="../../css/global.css" />
+  </head>
+  <body>
+    <header>
+      <h1>WeShelter</h1>
+      <button>☰</button>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <p>WeShelter</p>
+      <p>Adresse: Slotgade 2, 1. sal, 2200 København N</p>
+      <p>
+        E-mail: <a href="mailto:kontakt@weshelter.dk">kontakt@weshelter.dk</a>
+      </p>
+      <p>CVR: 80968515</p>
+    </footer>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
