@@ -1,11 +1,56 @@
 <section id="signup">
-  <h2>Overvejer du at blive frivillig?</h2>
-  <p>Udfyld formularen, så kontakter vi dig</p>
+  <div class="text">
+    <h2>Overvejer du at blive frivillig?</h2>
+    <p>Udfyld formularen, så kontakter vi dig</p>
+  </div>
 
-  <form action="">
+  <form class="signup">
+    <h2 class="h2">Tilmeld dig her</h2>
     <input type="text" placeholder="Navn" />
     <input type="email" placeholder="Email" />
     <input type="text" placeholder="Telefon" />
     <button type="submit">Tilmeld</button>
   </form>
 </section>
+
+<style>
+  .text {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .signup {
+    text-align: center;
+    padding: 20px;
+    background: #256af6;
+  }
+
+  .h2 {
+    color: white;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: auto;
+  }
+
+  form input,
+  form button {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #256af6;
+  }
+
+  form button {
+    background: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  form button:hover {
+    background: #cae9ff;
+  }
+</style>
