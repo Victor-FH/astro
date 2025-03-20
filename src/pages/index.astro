@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import Info from "../components/Info.astro";
 import VolunteerProjects from "../components/VolunteerProjects.astro";
 import Signupform from "../components/Signupform.astro";
 import Footer from "../components/Footer.astro";
@@ -10,7 +11,10 @@ import Footer from "../components/Footer.astro";
   <Hero />
 
   <section>
-    <h2>Frivillige projekter</h2>
+    <Info />
+  </section>
+
+  <section>
     <VolunteerProjects />
   </section>
 
@@ -21,5 +25,4 @@ import Footer from "../components/Footer.astro";
   <section>
     <Footer />
   </section>
-</Layout>;
----
+</Layout>; ---

@@ -1,4 +1,6 @@
-const WeShelter = Astro.props;
+---
+import Navbar from "../components/Navbar.astro";
+---
 
 <html lang="en">
   <head>
@@ -11,8 +13,7 @@ const WeShelter = Astro.props;
   </head>
   <body>
     <header>
-      <h1>WeShelter</h1>
-      <button>☰</button>
+      <Navbar />
     </header>
 
     <main>
