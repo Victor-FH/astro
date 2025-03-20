@@ -1,8 +1,44 @@
-<section>
-  <img src="../../billeder/hero.jpeg" alt="Frivillige hjælper hjemløse" />
-  <div>
-    <h2>STØT HJEMLØSE OG UDSATTE</h2>
-    <p>BLIV FRIVILLIG</p>
-    <a href="#signup">Tilmeld dig</a>
-  </div>
+<section class="hero">
+  <h2>STØT HJEMLØSE OG UDSATTE</h2>
+  <p>BLIV FRIVILLIG</p>
+  <a href="#signup">Tilmeld dig</a>
 </section>
+
+<style>
+  .hero {
+    background: url(../../billeder/hero.jpeg) center/cover;
+    text-align: center;
+    color: white;
+    padding: 50px 20px;
+    position: relative;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #256af6;
+  }
+
+  .hero h2 .hero p .hero btn {
+    position: relative;
+    z-index: 2;
+  }
+
+  .btn {
+    display: inline-block;
+    background: #256af6;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+  .btn:hover {
+    background: #cae9ff;
+  }
+</style>
