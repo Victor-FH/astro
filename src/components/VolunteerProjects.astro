@@ -1,27 +1,193 @@
----
-const projects = [
-  {
-    title: "Projekt A",
-    description: "Hjælp hjemløse med mad og støtte",
-    img: "../../billeder/billede1.jpeg",
-  },
-  {
-    title: "Projekt B",
-    description: "Sociale aktiviteter for udsatte",
-    img: "../../billeder/billede2.jpeg",
-  },
-];
----
+<div class="carousel-container">
+  <button class="arrow left" aria-label="Forrige" onclick="moveSlide(-1)"
+    >&#10094;</button
+  >
 
-<div>
-  {
-    projects.map((project) => (
-      <div>
-        <img src={project.img} alt={project.title} />
-        <h3>{project.title}</h3>
-        <p>{project.description}</p>
-        <a href="#">Læs mere</a>
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <!-- kort1 -->
+      <div class="card">
+        <h3>Bliv følgeven for en tidligere hjemløs</h3>
+        <img src="billeder/følgeven-740x416.jpg" alt="følgeven" />
+        <p>
+          Som følgeven hjælper du tidligere hjemløse til et godt liv i sit nye
+          hjem.
+        </p>
+        <a href="#" class="card-button">Læs mere</a>
       </div>
-    ))
-  }
+
+      <!-- kort2 -->
+      <div class="card">
+        <h3>Bliv frivillig massør</h3>
+        <img src="billeder/massage740x416.jpg" alt="massør" />
+        <p>
+          Som frivillig massør kan du give udsatte mennesker ro, nærvær og øget
+          kropsbevidsthed.
+        </p>
+        <a href="#" class="card-button">Læs mere</a>
+      </div>
+
+      <!-- kort3 -->
+      <div class="card">
+        <h3>Frivillig i madklub under åben himmel</h3>
+        <img
+          src="billeder/offsides-sociale-haverdrivhus740x416.jpg"
+          alt="ude madklub"
+        />
+        <p>
+          Vil du være med til at bekæmpe ensomhed i en social madklub under åben
+          himmel? Så bliv frivillig i Offsides Sociale Haver!
+        </p>
+        <a href="#" class="card-button">Læs mere</a>
+      </div>
+
+      <!-- kort4 -->
+      <div class="card">
+        <h3>Bliv LGBT+ Ven</h3>
+        <img src="billeder/normaria-lgbtvenner740x416.jpg" alt="lgbt ven" />
+        <p>
+          Er du LGBT+ person, og vil du hjælpe LGBT+ personer, som føler sig
+          ensomme eller har det psykisk svært?
+        </p>
+        <a href="#" class="card-button">Læs mere</a>
+      </div>
+    </div>
+  </div>
+
+  <button class="arrow right" aria-label="Næste" onclick="moveSlide(1)"
+    >&#10095;</button
+  >
 </div>
+
+<!-- <script type="module">
+  let currentIndex = 0;
+
+  const carousel = document.querySelector(".carousel");
+  const cards = document.querySelectorAll(".card");
+  const totalCards = cards.length;
+
+  function moveSlide(direction) {
+    const visibleCards = 3;
+    const maxIndex = totalCards - visibleCards;
+
+    currentIndex += direction;
+
+    if (currentIndex < 0) currentIndex = 0;
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+    const carouselWrapper = document.querySelector(".carousel-wrapper");
+    const wrapperWidth = carouselWrapper.offsetWidth;
+
+    const cardWidth = wrapperWidth / visibleCards; // ny logik!
+    carousel.style.transform = `translateX(-${currentIndex * (cardWidth + 20)}px)`;
+  }
+  window.addEventListener("resize", () => moveSlide(0));
+</script> -->
+
+<style>
+  .carousel-container {
+    position: relative;
+    background-color: #cae9ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    margin-bottom: 3em;
+    box-sizing: border-box;
+  }
+
+  .carousel-wrapper {
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px;
+  }
+
+  .card {
+    width: 300px;
+    height: 450px;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1em;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card img {
+    margin-bottom: 1em;
+    border-radius: 8px;
+  }
+
+  .card p {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .card-button {
+    display: inline-block;
+    background-color: #256af6;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: tahoma;
+  }
+
+  .card-button:hover {
+    background-color: #0056b3;
+  }
+
+  .arrow {
+    background-color: #cae9ff;
+    color: white;
+    border: none;
+    padding: 5px;
+    margin: 6px;
+    cursor: pointer;
+    border-radius: 100%;
+    font-size: 3em;
+  }
+
+  .arrow:hover {
+    color: #256af6;
+  }
+
+  h2 {
+    background-color: #cae9ff;
+  }
+
+  @media (max-width: 800px) {
+    .card {
+      min-width: 250px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .card {
+      min-width: 200px;
+    }
+  }
+</style>
